@@ -1,0 +1,7 @@
+
+class openldap
+{
+  ## openldap stub
+}
+
+

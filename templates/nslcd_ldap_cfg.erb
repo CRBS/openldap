@@ -1,0 +1,41 @@
+######
+######   THIS FILE IS MANAGED BY PUPPET!   ######
+######
+######   If you need a long-term modification to this file, it must be put in SVN in order to persist.
+######   Contact CRBS SysOps via http://support.crbs.ucsd.edu if you need assistance.
+######
+
+## Managed by puppet  openldap/templates/nslcd_ldap_cfg.erb via https://github.com/crbs/openldap
+
+
+## The distinguished name to perform password modifications by root by.
+rootpwmoddn     <%= @nslcd_rootpwmoddn %>
+
+## Customize certain database lookups.
+base   group  ou=Group,<%= @base %>
+base   passwd ou=People,<%= @base %>
+base   shadow ou=People,<%= @base %>
+
+## Bind/connect timelimit.
+bind_timelimit  <%= @nslcd_bind_timelimit %>
+
+## Search timelimit.
+timelimit       <%= @nslcd_timelimit %>
+
+## Idle timelimit. nslcd will close connections if the
+## server has not been contacted for the number of seconds.
+idle_timelimit  <%= @nslcd_idle_timelimit %>
+
+## Use StartTLS without verifying the server certificate.
+tls_reqcert     <%= @nslcd_tls_reqcert %> 
+
+## local lookups use nslcd and ldap 
+uid             <%= @nslcd_uid %>
+gid             <%= @nslcd_gid %>
+
+## This comment prevents repeated auto-migration of settings.
+uri             <%= @uri %>
+base            <%= @base %>
+ssl             <%= @nslcd_ssl %>
+tls_cacertdir   <%= @nslcd_tls_cacertdir %>
+
