@@ -3,8 +3,8 @@ class openldap::params
 {
 
   ## place default vars here.
-#  $uri_list                = []        ## required
-#  $base                    = undef     ## required
+  $uri                = []        ## required
+  $base               = ''     ## required
 
 
 
