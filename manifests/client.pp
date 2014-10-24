@@ -9,7 +9,7 @@ class openldap::client (
   $base_pkg_name   = $openldap::params::base_pkg_name,
   $client_pkg_name = $openldap::params::client_pkg_name,
   $nscd_pkg_name   = $openldap::params::nscd_pkg_name,
-  $base_ldap_path  = $openldap::params::base_ldap_path
+  $base_ldap_path  = $openldap::params::base_ldap_path,
   $nslcd_ldap_cfg  = $openldap::params::nslcd_ldap_cfg
 
 
