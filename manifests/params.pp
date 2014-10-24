@@ -3,13 +3,13 @@ class openldap::params
 {
 
   ## place default vars here.
-  $uri_list                = []        ## required
-  $base                    = undef     ## required
+#  $uri_list                = []        ## required
+#  $base                    = undef     ## required
 
 
 
   ## nslcd configuration and packages
-  $nslcd_rootpwmoddn       = undef
+ # $nslcd_rootpwmoddn       = undef
 
 
   ## Based on the operating system, set the correct params of where

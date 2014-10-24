@@ -1,18 +1,18 @@
 
 class openldap::client (
-
-  $uri_list        = $openldap::params::uri_list,
-  $base            = $openldap::params::base,
-  $tls_cacert      = $openldap::params::tls_cacert,
-  $tls_reqcert     = $openldap::params::tls_reqcert,
-  $tls_cacertdir   = $openldap::params::tls_cacertdir,
-  $base_pkg_name   = $openldap::params::base_pkg_name,
-  $client_pkg_name = $openldap::params::client_pkg_name,
-  $nscd_pkg_name   = $openldap::params::nscd_pkg_name,
-  $base_ldap_path  = $openldap::params::base_ldap_path,
-  $nslcd_ldap_cfg  = $openldap::params::nslcd_ldap_cfg
-
-
+##########
+##  $uri_list        = $openldap::params::uri_list,
+##  $base            = $openldap::params::base,
+##  $tls_cacert      = $openldap::params::tls_cacert,
+##  $tls_reqcert     = $openldap::params::tls_reqcert,
+##  $tls_cacertdir   = $openldap::params::tls_cacertdir,
+##  $base_pkg_name   = $openldap::params::base_pkg_name,
+##  $client_pkg_name = $openldap::params::client_pkg_name,
+##  $nscd_pkg_name   = $openldap::params::nscd_pkg_name,
+##  $base_ldap_path  = $openldap::params::base_ldap_path,
+##  $nslcd_ldap_cfg  = $openldap::params::nslcd_ldap_cfg
+##
+##
 ) inherits openldap::params {
 
   ## ensure that the proper packages are installed for the client
