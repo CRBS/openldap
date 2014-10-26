@@ -10,8 +10,8 @@ class openldap::client (
   $client_pkg_name = $openldap::params::client_pkg_name,
   $nscd_pkg_name   = $openldap::params::nscd_pkg_name,
   $base_ldap_path  = $openldap::params::base_ldap_path,
-  $nslcd_ldap_cfg  = $openldap::params::nslcd_ldap_cfg
-
+  $nslcd_ldap_cfg  = $openldap::params::nslcd_ldap_cfg,
+  $nslcd_rootpwmoddn = $openldap::params::nslcd_rootpwmoddn
 
 ) inherits openldap::params {
 

@@ -9,7 +9,7 @@ class openldap::params
 
 
   ## nslcd configuration and packages
- # $nslcd_rootpwmoddn       = undef
+  $nslcd_rootpwmoddn       = undef
 
 
   ## Based on the operating system, set the correct params of where
