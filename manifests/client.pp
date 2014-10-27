@@ -21,17 +21,30 @@
 
 class openldap::client (
 
-  $uri               = $openldap::params::uri,
-  $base              = $openldap::params::base,
-  $tls_cacert        = $openldap::params::tls_cacert,
-  $tls_reqcert       = $openldap::params::tls_reqcert,
-  $tls_cacertdir     = $openldap::params::tls_cacertdir,
-  $base_pkg_name     = $openldap::params::base_pkg_name,
-  $client_pkg_name   = $openldap::params::client_pkg_name,
-  $nscd_pkg_name     = $openldap::params::nscd_pkg_name,
-  $base_ldap_path    = $openldap::params::base_ldap_path,
-  $nslcd_ldap_cfg    = $openldap::params::nslcd_ldap_cfg,
-  $nslcd_rootpwmoddn = $openldap::params::nslcd_rootpwmoddn
+  $uri                  = $openldap::params::uri,
+  $base                 = $openldap::params::base,
+  $tls_cacert           = $openldap::params::tls_cacert,
+  $tls_reqcert          = $openldap::params::tls_reqcert,
+  $tls_cacertdir        = $openldap::params::tls_cacertdir,
+  $base_pkg_name        = $openldap::params::base_pkg_name,
+  $client_pkg_name      = $openldap::params::client_pkg_name,
+  $base_ldap_path       = $openldap::params::base_ldap_path,
+
+  $nscd_pkg_name        = $openldap::params::nscd_pkg_name,
+  $nslcd_ldap_cfg       = $openldap::params::nslcd_ldap_cfg,
+  $nslcd_rootpwmoddn    = $openldap::params::nslcd_rootpwmoddn,
+  $nslcd_bind_timelimit = $openldap::params::nslcd_bind_timelimit,
+  $nslcd_timelimit      = $openldap::params::nslcd_timelimit,
+  $nslcd_idle_timelimit = $openldap::params::nslcd_idle_timelimit,
+  $nslcd_tls_reqcert    = $openldap::params::nslcd_tls_reqcert,
+  $nslcd_uid            = $openldap::params::nslcd_uid,
+  $nslcd_gid            = $openldap::params::nslcd_gid,
+  $nslcd_ssl            = $openldap::params::nslcd_ssl,
+  $nslcd_tls_cacertdir  = $openldap::params::nslcd_tls_cacertdir
+
+
+
+
 
 
 ) inherits openldap::params {
@@ -99,6 +112,7 @@ class openldap::client (
       service { "nslcd":
         ensure => "running",
         enable => true,
+        subscribe => File["$nslcd_ldap_cfg"],
       }
 
       
