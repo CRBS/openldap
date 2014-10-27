@@ -2,18 +2,18 @@
 class openldap::params
 {
 
-  ## place default vars here.
-  $uri                = ''        ## required
-  $base               = ''     ## required
+  # place default vars here.
+  $uri                = ''        # required
+  $base               = ''     # required
 
 
 
-  ## nslcd configuration and packages
+  # nslcd configuration and packages
   $nslcd_rootpwmoddn       = undef
 
 
-  ## Based on the operating system, set the correct params of where
-  ## and how to configure openldap
+  # Based on the operating system, set the correct params of where
+  # and how to configure openldap
   case $::osfamily {
 
     'Debian': {
@@ -24,7 +24,7 @@ class openldap::params
       $base_ldap_path      = undef
       $nscd_pkg_name       = 'nscd'
 
-    } ## End Debian/Ubuntu case
+    } # End Debian/Ubuntu case
 
     'RedHat': {
 
@@ -51,14 +51,14 @@ class openldap::params
 
 
 
-    } ## End Redhat case
+    } # End Redhat case
 
-  } ## End case statement for osfamily.
-
-
+  } # End case statement for osfamily.
 
 
 
 
-} ## End of openldap::params class
+
+
+} # End of openldap::params class
 
