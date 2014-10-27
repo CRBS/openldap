@@ -16,7 +16,7 @@ class openldap::params
 {
 
   # place default vars here. used for openldap::client and openldap::server
-  $uri                       = undef     # required
+  $uri                       = []        # required
   $base                      = undef     # required
 
   # nslcd configuration and packages used for the openldap::client

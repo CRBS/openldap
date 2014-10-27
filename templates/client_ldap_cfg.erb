@@ -1,24 +1,17 @@
-######
-######   THIS FILE IS MANAGED BY PUPPET!   ######
-######
-######   If you need a long-term modification to this file, it must be put in SVN in order to persist.
-######   Contact CRBS SysOps via http://support.crbs.ucsd.edu if you need assistance.
-######
-
-## Managed by puppet37  openldap/templates/client_ldap_cfg.erb via https://github.com/crbs/openldap
-
+#
+#   If you need a long-term modification to this file, contact
+#   CRBS SysOps via http://support.crbs.ucsd.edu if you need assistance.
+#   Managed by puppet37 openldap/templates/client_ldap_cfg.erb via https://github.com/crbs/openldap.git
+#
 <% if @uri %>
-    URI <%= @uri %>
+    URI <%= @uri.join(' ') %>
 <% end %>
-
 <% if @base %>
     BASE <%= @base %>
 <% end %>
-
 <% if @tls_cacert %>
     TLS_CACERT <%= @tls_cacert %>
 <% end %>
-
 <% if @tls_reqcert %>
     TLS_REQCERT <%= @tls_reqcert %>
 <% end %>

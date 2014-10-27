@@ -34,7 +34,7 @@ uid             <%= @nslcd_uid %>
 gid             <%= @nslcd_gid %>
 
 ## This comment prevents repeated auto-migration of settings.
-uri             <%= @uri %>
+uri             <%= @uri.join(' ') %>
 base            <%= @base %>
 ssl             <%= @nslcd_ssl %>
 tls_cacertdir   <%= @nslcd_tls_cacertdir %>
