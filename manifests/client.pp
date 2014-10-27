@@ -1,17 +1,38 @@
+/*
+ * Author: Edmond Negado
+ * File: client.pp
+ * Description: This class module preps the openldap client on either
+ *  a Redhat/CentOS based system or a ubuntu system.
+ *
+ * Hiera Example - use the parameters which are set in the params list
+ *  of openldap. any params not set in hiera, will use the default params
+ *  set in openldap::params.
+ *
+ * classes:
+ *   - openldap::client
+ *
+ * openldap::client::uri: 'ldaps://dapper.crbs.ucsd.edu'
+ * openldap::client::base: 'dc=ldap,dc=crbs,dc=ucsd,dc=edu'
+ * 
+ *
+ *
+ *
+ */
 
 class openldap::client (
 
-  $uri             = $openldap::params::uri,
-  $base            = $openldap::params::base,
-  $tls_cacert      = $openldap::params::tls_cacert,
-  $tls_reqcert     = $openldap::params::tls_reqcert,
-  $tls_cacertdir   = $openldap::params::tls_cacertdir,
-  $base_pkg_name   = $openldap::params::base_pkg_name,
-  $client_pkg_name = $openldap::params::client_pkg_name,
-  $nscd_pkg_name   = $openldap::params::nscd_pkg_name,
-  $base_ldap_path  = $openldap::params::base_ldap_path,
-  $nslcd_ldap_cfg  = $openldap::params::nslcd_ldap_cfg,
+  $uri               = $openldap::params::uri,
+  $base              = $openldap::params::base,
+  $tls_cacert        = $openldap::params::tls_cacert,
+  $tls_reqcert       = $openldap::params::tls_reqcert,
+  $tls_cacertdir     = $openldap::params::tls_cacertdir,
+  $base_pkg_name     = $openldap::params::base_pkg_name,
+  $client_pkg_name   = $openldap::params::client_pkg_name,
+  $nscd_pkg_name     = $openldap::params::nscd_pkg_name,
+  $base_ldap_path    = $openldap::params::base_ldap_path,
+  $nslcd_ldap_cfg    = $openldap::params::nslcd_ldap_cfg,
   $nslcd_rootpwmoddn = $openldap::params::nslcd_rootpwmoddn
+
 
 ) inherits openldap::params {
 
